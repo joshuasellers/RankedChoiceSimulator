@@ -3,7 +3,11 @@ import java.util.Collection;
 import java.util.Collections;
 
 public class RCSMain {
-
+    /**
+     * get random list of candidates
+     * @param c - list of candidates
+     * @return random list of candidates
+     */
     public static ArrayList<Candidate> getCandidates(ArrayList<Candidate> c){
         ArrayList<Candidate> candidates = new ArrayList<>();
         ArrayList<Integer> shuffle = new ArrayList<>();
@@ -17,6 +21,12 @@ public class RCSMain {
         return candidates;
     }
 
+    /**
+     * create a list of voters from the specified number
+     * @param v - number of voters
+     * @param candidates - list of candidates
+     * @return list of voters
+     */
     public static ArrayList<Voter> getVoters(int v, ArrayList<Candidate> candidates){
         ArrayList<Voter> voters = new ArrayList<>();
         for (int i = 0; i < v; i++){
