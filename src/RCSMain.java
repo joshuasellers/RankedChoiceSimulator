@@ -41,6 +41,7 @@ public class RCSMain {
      * @param args - given as ` "Candidate_Name Candidate_Party" "Candidate_Name Candidate_Party" ... Number_Voters
      */
     public static void main(String[] args) {
+        if (args.length < 2) System.exit(0);
         int v = 0;
         int total_candidates = 0;
         ArrayList<Candidate> candidates = new ArrayList<>();
