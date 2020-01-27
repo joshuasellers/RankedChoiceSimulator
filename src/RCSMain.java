@@ -37,6 +37,25 @@ public class RCSMain {
     }
 
     /**
+     * run ranked choice and all the helper functions
+     * @param voters - list of voters
+     * @param candidates - list of candidates
+     * @param v - count of voters
+     */
+    public static void runSimulation(ArrayList<Voter> voters, ArrayList<Candidate> candidates, int v){
+        System.out.println("WELCOME TO THE ELECTION");
+        System.out.println("***********************");
+        System.out.println("HERE ARE THE CANDIDATES:");
+        for (Candidate c : candidates){
+            System.out.println(c.toString());
+            System.out.println("");
+        }
+        System.out.println("***********************");
+        System.out.println("THERE ARE " + v + " TOTAL VOTERS");
+        System.out.println("***********************");
+    }
+
+    /**
      * run ranked choice simulation
      * @param args - given as ` "Candidate_Name Candidate_Party" "Candidate_Name Candidate_Party" ... Number_Voters
      */
@@ -59,17 +78,8 @@ public class RCSMain {
                 candidates.add(new Candidate(candidate_fields[0],candidate_fields[1]));
             }
         }
+        if (total_candidates == 0) System.exit(0);
         voters = getVoters(v, candidates);
-        System.out.println("WELCOME TO THE ELECTION");
-        System.out.println("***********************");
-        System.out.println("HERE ARE THE CANDIDATES:");
-        for (Candidate c : candidates){
-            System.out.println(c.toString());
-            System.out.println("");
-        }
-        System.out.println("***********************");
-        System.out.println("THERE ARE " + v + " TOTAL VOTERS");
-        System.out.println("***********************");
-
+        runSimulation(voters,candidates, v);
     }
 }
